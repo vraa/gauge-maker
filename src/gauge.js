@@ -34,10 +34,22 @@ class Gauge extends Component {
     };
 
     renderTicks = (opts) => {
+        let tickAngles = [];
+        for (let i = 0; i <= 360; i += opts.tickInterval) {
+            tickAngles.push(i);
+        }
         return (
-            <use
-                href={`#${TICK_ID}`}
-            />
+            <g className="ticks">
+                {
+                    tickAngles.map((tickAngle, idx) => {
+                        return <use
+                            href={`#${TICK_ID}`}
+                            key={`tick-${idx}`}
+                            transform={`rotate(${tickAngle} ${opts.cX} ${opts.cY})`}
+                        />
+                    })
+                }
+            </g>
         )
     };
 
@@ -82,9 +94,10 @@ Gauge.defaultProps = {
     size: 120,
     dialWidth: 10,
     dialColor: "#eee",
-    tickLength: 5,
-    tickWidth: 2,
-    tickColor: "#cacaca"
+    tickLength: 3,
+    tickWidth: 1,
+    tickColor: "#cacaca",
+    tickInterval: 10
 };
 
 export default Gauge;
