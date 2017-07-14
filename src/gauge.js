@@ -63,12 +63,65 @@ class Gauge extends Component {
                 cy={opts.cY}
                 r={opts.radius}
                 fill="none"
-                stroke={opts.upProgressColor}
+                stroke={opts.progressColor}
                 strokeWidth={opts.progressWidth}
                 strokeDasharray={opts.circumference}
                 strokeDashoffset={offset}
+                strokeLinecap={opts.progressRoundedEdge ? 'round' : 'butt'}
             />
         )
+    };
+
+    renderNeedle = (opts) => {
+
+        let
+            x1 = opts.cX,
+            y1 = opts.cY - (opts.needleWidth / 2),
+            x2 = opts.cX,
+            y2 = opts.cY + (opts.needleWidth / 2),
+            x3 = opts.diameter,
+            y3 = opts.cY,
+            needleAngle = (360 * opts.currentValue) / 100;
+
+        let needleElm = null;
+        if (opts.needleSharp) {
+            needleElm = (
+                <polygon
+                    points={`${x1},${y1} ${x2},${y2} ${x3},${y3}`}
+                    fill={opts.needleColor}
+                >
+
+                </polygon>
+            );
+        } else {
+            needleElm = (
+                <line
+                    x1={opts.cX}
+                    y1={opts.cY}
+                    x2={opts.diameter}
+                    y2={opts.cY}
+                    fill="none"
+                    strokeWidth={opts.needleWidth}
+                    stroke={opts.needleColor}
+                />
+            );
+        }
+
+        return (
+            <g className="needle">
+                <g transform={`rotate(${needleAngle} ${opts.cX} ${opts.cY})`}>
+                    {needleElm}
+                </g>
+                <circle
+                    cx={opts.cX}
+                    cy={opts.cY}
+                    r={opts.needleBaseSize}
+                    fill={opts.needleBaseColor}
+                >
+                </circle>
+            </g>
+        )
+
     };
 
     render() {
@@ -106,6 +159,7 @@ class Gauge extends Component {
                 {this.renderDial(opts)}
                 {this.renderTicks(opts)}
                 {this.renderProgress(opts)}
+                {this.renderNeedle(opts)}
             </svg>
         )
     }
@@ -123,10 +177,18 @@ Gauge.defaultProps = {
     tickInterval: 10,
 
     maximumValue: 100,
-    currentValue: 60,
+    currentValue: 25,
     progressWidth: 5,
-    upProgressColor: "#cacaca",
-    downProgressColor: "red"
+    progressColor: "#000",
+    progressRoundedEdge: true,
+    downProgressColor: "red",
+
+    needle: true,
+    needleBaseSize: 5,
+    needleBaseColor: '#9d9d9d',
+    needleWidth: 2,
+    needleSharp: false,
+    needleColor: '#8a8a8a'
 };
 
 export default Gauge;
