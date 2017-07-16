@@ -5,11 +5,12 @@
 
 .gauge-display {
     display: flex;
-    min-height: 250px;
-    max-height: 250px;
+    min-height: 210px;
+    max-height: 210px;
     overflow: auto;
     align-items: center;
     justify-content: center;
+    margin-top: 20px;
 }
 
 .gauge-display .gauge {

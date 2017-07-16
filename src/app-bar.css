@@ -1,0 +1,9 @@
+.app-bar {
+
+}
+
+.app-bar h1 {
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: 300;
+}

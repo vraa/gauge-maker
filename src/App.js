@@ -5,6 +5,7 @@ import Themes, {themes} from "./themes";
 import Gauge from "react-svg-gauge";
 import GaugeForm from "./gauge-form";
 import GaugeExport from "./gauge-export";
+import AppFooter from "./app-footer";
 
 class App extends Component {
     constructor() {
@@ -31,18 +32,20 @@ class App extends Component {
         return (
             <div className="App">
                 <AppBar/>
-                <Themes onChange={this.applyTheme}/>
+
                 <div className="gauge-display">
                     <Gauge
                         className="gauge"
                         {...this.state}
                     />
                 </div>
+                <Themes onChange={this.applyTheme}/>
                 <GaugeExport/>
                 <GaugeForm
                     onChange={this.handleGaugeChange}
                     {...this.state}
                 />
+                <AppFooter/>
             </div>
         );
     }
