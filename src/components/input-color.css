@@ -20,7 +20,9 @@
 }
 
 .color-picker.open {
+    position: absolute;
     display: block;
+
 }
 
 .color-picker.close {

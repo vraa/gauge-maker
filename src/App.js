@@ -2,8 +2,8 @@ import React, {Component} from "react";
 import "./App.css";
 import AppBar from "./app-bar";
 import Gauge from "react-svg-gauge";
-import GaugeExport from "./gauge-export";
 import GaugeForm from "./gauge-form";
+import GaugeExport from "./gauge-export";
 
 class App extends Component {
     constructor() {
@@ -47,9 +47,12 @@ class App extends Component {
         return (
             <div className="App">
                 <AppBar/>
-                <Gauge
-                    {...this.state}
-                />
+                <div className="gauge-display">
+                    <Gauge
+                        className="gauge"
+                        {...this.state}
+                    />
+                </div>
                 <GaugeExport/>
                 <GaugeForm
                     onChange={this.handleGaugeChange}

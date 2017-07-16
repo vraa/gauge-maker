@@ -1,23 +1,86 @@
 .gauge-form {
-    text-align: left;
-}
-
-.gauge-form .field-group {
-    width: 400px;
     display: grid;
-    grid-template-rows: auto;
-    grid-gap: 5px;
-
+    grid-template-columns: 1fr;
+    grid-template-areas: "primary" "colors" "sizes";
+    text-align: left;
+    max-width: 400px;
+    margin: 0 auto;
 }
 
-.field-group.two-col {
-    grid-template-columns: 200px 200px;
+.gauge-form label {
+    letter-spacing: 1px;
 }
 
-.field-group.three-col {
-    grid-template-columns: 133px 133px 134px;
+.gauge-form fieldset.primary {
+    grid-area: primary;
 }
 
-.field-group.four-col {
-    grid-template-columns: 100px 100px 100px 100px;
+.gauge-form fieldset.colors {
+    grid-area: colors;
+    margin-top: 10px;
+    border: 1px solid #dadada;
+    border-top: 3px solid crimson;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 3px #dadada;
+}
+
+.gauge-form fieldset.sizes {
+    grid-area: sizes;
+    margin-top: 20px;
+    border: 1px solid #dadada;
+    border-top: 3px solid crimson;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 3px #dadada;
+}
+
+.gauge-form .primary .field-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+}
+
+.gauge-form .colors .field-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.gauge-form .sizes .field-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/* colors and sizes */
+
+.gauge-form legend {
+    float: left;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #6d6d6d;
+}
+
+.gauge-form fieldset {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.gauge-form .primary {
+    padding: 0 0 10px 0;
+    margin: 20px -20px 0 -20px;
+}
+
+.gauge-form .primary label {
+    color: #4d4d4d;
+    font-size: 1rem;
+}
+
+.input-field {
+    margin-top: 20px;
+}
+
+.colors .field-group,
+.sizes .field-group {
+    margin-left: 20px;
 }
