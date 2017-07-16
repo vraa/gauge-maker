@@ -25,6 +25,13 @@ class GaugeForm extends Component {
         this.props.onChange(st);
     };
 
+    handleCheckChange = (e) => {
+        console.log(e.target.checked);
+        let st = {};
+        st[e.target.id] = e.target.checked;
+        this.props.onChange(st);
+    };
+
     render() {
         let props = this.props;
         return (
@@ -39,7 +46,6 @@ class GaugeForm extends Component {
                             min="60"
                             max="200"
                             value={props.size}
-                            placeholder={'60 to 200'}
                         />
                         <InputField
                             id="currentValue"
@@ -49,7 +55,6 @@ class GaugeForm extends Component {
                             type="range"
                             min="0"
                             max="100"
-                            placeholder={'0 to 100'}
                         />
                     </div>
                 </fieldset>
@@ -70,11 +75,100 @@ class GaugeForm extends Component {
                             type="range"
                             min="0"
                             max="20"
-                            placeholder={'0 to 20'}
                         />
                     </div>
                 </fieldset>
-
+                <fieldset>
+                    <legend>Tick</legend>
+                    <div className="field-group two-col">
+                        <InputColor
+                            id="tickColor"
+                            label="Color"
+                            value={props.tickColor}
+                            onChange={this.handleColorChange}
+                        />
+                        <InputField
+                            id="tickWidth"
+                            label="Width"
+                            value={props.tickWidth}
+                            onChange={this.handleChange}
+                            type="range"
+                            min="1"
+                            max="10"
+                        />
+                        <InputField
+                            id="tickLength"
+                            label="Length"
+                            value={props.tickLength}
+                            onChange={this.handleChange}
+                            type="range"
+                            min="1"
+                            max="20"
+                        />
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Progress</legend>
+                    <div className="field-group two-col">
+                        <InputColor
+                            id="progressColor"
+                            label="Color"
+                            value={props.progressColor}
+                            onChange={this.handleColorChange}
+                        />
+                        <InputField
+                            id="progressWidth"
+                            label="Length"
+                            value={props.progressWidth}
+                            onChange={this.handleChange}
+                            type="range"
+                            min="1"
+                            max="20"
+                        />
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Needle</legend>
+                    <div className="field-group two-col">
+                        <InputColor
+                            id="needleBaseColor"
+                            label="Base Color"
+                            value={props.needleBaseColor}
+                            onChange={this.handleColorChange}
+                        />
+                        <InputField
+                            id="needleBaseSize"
+                            label="Base Size"
+                            value={props.needleBaseSize}
+                            onChange={this.handleChange}
+                            type="range"
+                            min="0"
+                            max="20"
+                        />
+                        <InputColor
+                            id="needleColor"
+                            label="Needle Color"
+                            value={props.needleColor}
+                            onChange={this.handleColorChange}
+                        />
+                        <InputField
+                            id="needleWidth"
+                            label="Needle Size"
+                            value={props.needleWidth}
+                            onChange={this.handleChange}
+                            type="range"
+                            min="0"
+                            max="20"
+                        />
+                        <InputField
+                            id="needleSharp"
+                            label="Needle Size"
+                            checked={props.needleSharp}
+                            onChange={this.handleCheckChange}
+                            type="checkbox"
+                        />
+                    </div>
+                </fieldset>
             </form>
         )
     }

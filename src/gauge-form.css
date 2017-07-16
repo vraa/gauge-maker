@@ -6,7 +6,8 @@
     width: 400px;
     display: grid;
     grid-template-rows: auto;
-    grid-gap: 10px;
+    grid-gap: 5px;
+
 }
 
 .field-group.two-col {
@@ -14,5 +15,9 @@
 }
 
 .field-group.three-col {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 133px 133px 134px;
+}
+
+.field-group.four-col {
+    grid-template-columns: 100px 100px 100px 100px;
 }
