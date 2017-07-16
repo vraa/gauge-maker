@@ -59,6 +59,7 @@ class InputColor extends Component {
                         pointer={null}
                     />
                 </div>
+                <p className="input-value">{props.value}</p>
             </div>
         )
 

@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import "./App.css";
 import AppBar from "./app-bar";
+import Themes, {themes} from "./themes";
 import Gauge from "react-svg-gauge";
 import GaugeForm from "./gauge-form";
 import GaugeExport from "./gauge-export";
@@ -8,31 +9,7 @@ import GaugeExport from "./gauge-export";
 class App extends Component {
     constructor() {
         super();
-        this.state = {
-            size: 200,
-
-            dialWidth: 10,
-            dialColor: "#eee",
-
-            tickLength: 3,
-            tickWidth: 1,
-            tickColor: "#cacaca",
-            tickInterval: 10,
-
-            maximumValue: 100,
-            currentValue: 25,
-            progressWidth: 5,
-            progressColor: "#3d3d3d",
-            progressRoundedEdge: true,
-            downProgressColor: "red",
-
-            needle: true,
-            needleBaseSize: 5,
-            needleBaseColor: '#9d9d9d',
-            needleWidth: 2,
-            needleSharp: false,
-            needleColor: '#8a8a8a'
-        };
+        this.state = themes.regular;
     }
 
     handleGaugeChange = (st) => {
@@ -43,10 +20,18 @@ class App extends Component {
         ));
     };
 
+    applyTheme = (theme) => {
+        this.setState(Object.assign(
+            {},
+            theme
+        ));
+    };
+
     render() {
         return (
             <div className="App">
                 <AppBar/>
+                <Themes onChange={this.applyTheme}/>
                 <div className="gauge-display">
                     <Gauge
                         className="gauge"

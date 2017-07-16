@@ -1,0 +1,9 @@
+.gauge-export button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: .7rem;
+    font-weight: 300;
+    text-transform: uppercase ;
+    letter-spacing: 2px;
+}

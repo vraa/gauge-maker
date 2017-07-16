@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
+import "./gauge-export.css";
 
 class GaugeExport extends Component {
     render() {
         return (
             <div className="gauge-export">
-                <button>Export</button>
+                <button>Download</button>
             </div>
         )
     }

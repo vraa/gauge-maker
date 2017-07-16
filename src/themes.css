@@ -1,0 +1,16 @@
+.themes {
+    margin-top: 10px;
+    background-color: #fafafa;
+    padding: 10px 0;
+}
+
+.themes h2 {
+    font-size: .8rem;
+    letter-spacing: 2px;
+    color: #9a9a9a;
+    text-transform: uppercase;
+}
+
+.themes select {
+    margin-top: 10px;
+}
