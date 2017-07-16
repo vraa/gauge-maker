@@ -1,0 +1,18 @@
+.gauge-form {
+    text-align: left;
+}
+
+.gauge-form .field-group {
+    width: 400px;
+    display: grid;
+    grid-template-rows: auto;
+    grid-gap: 10px;
+}
+
+.field-group.two-col {
+    grid-template-columns: 200px 200px;
+}
+
+.field-group.three-col {
+    grid-template-columns: 1fr 1fr 1fr;
+}

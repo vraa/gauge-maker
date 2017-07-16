@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import "./input-field.css";
 
 class InputField extends Component {
     render() {
@@ -11,10 +12,7 @@ class InputField extends Component {
                     {props.label}
                 </label>
                 <input
-                    id={props.id}
-                    type={props.type}
-                    onChange={props.onChange}
-                    value={props.value}
+                    {...props}
                 />
             </div>
         )

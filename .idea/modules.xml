@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/gauge-maker.iml" filepath="$PROJECT_DIR$/gauge-maker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../react-svg-gauge/react-svg-gauge.iml" filepath="$PROJECT_DIR$/../react-svg-gauge/react-svg-gauge.iml" />
     </modules>
   </component>
 </project>

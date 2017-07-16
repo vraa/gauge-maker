@@ -1,0 +1,33 @@
+.input-color {
+
+}
+
+.input-color button {
+    width: 60px;
+    height: 20px;
+    margin-top: 10px;
+    border: 1px solid #5d5d5d;
+}
+
+.input-color .sketch-picker {
+    margin-top: 10px;
+    box-shadow: none;
+}
+
+.color-picker {
+    position: relative;
+}
+
+.color-picker.open {
+    display: block;
+}
+
+.color-picker.close {
+    display: none;
+}
+
+.input-color .close-picker {
+    border: none;
+    background-color: transparent;
+    font-size: 1.2rem;
+}
