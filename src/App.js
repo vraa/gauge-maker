@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import "./App.css";
 import AppBar from "./app-bar";
 import Themes, {themes} from "./themes";
-import Gauge from  "react-svg-gauge"
+import Gauge from "react-svg-gauge";
 import GaugeForm from "./gauge-form";
 import GaugeExport from "./gauge-export";
 import AppFooter from "./app-footer";
@@ -40,7 +40,9 @@ class App extends Component {
                     />
                 </div>
                 <Themes onChange={this.applyTheme}/>
-                <GaugeExport/>
+                <GaugeExport
+                    {...this.state}
+                />
                 <GaugeForm
                     onChange={this.handleGaugeChange}
                     {...this.state}
