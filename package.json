@@ -1,5 +1,6 @@
 {
   "name": "gauge-maker",
+  "homepage": "https://veerasundar.com/gauge-generator",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
