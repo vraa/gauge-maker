@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import "./App.css";
 import AppBar from "./app-bar";
 import Themes, {themes} from "./themes";
-import Gauge from "react-svg-gauge";
+import Gauge from "react-radial-gauge";
 import GaugeForm from "./gauge-form";
 import GaugeExport from "./gauge-export";
 import AppFooter from "./app-footer";
