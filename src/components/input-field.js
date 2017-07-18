@@ -4,6 +4,10 @@ import "./input-field.css";
 class InputField extends Component {
     render() {
         let props = this.props;
+        let inputValElm = null;
+        if(props.type === 'range') {
+            inputValElm = <p className="input-value">{props.value}</p>;
+        }
         return (
             <div className="input-field">
                 <label
@@ -14,6 +18,7 @@ class InputField extends Component {
                 <input
                     {...props}
                 />
+                {inputValElm}
             </div>
         )
     }
