@@ -7,3 +7,7 @@
     font-size: 1.5rem;
     font-weight: 300;
 }
+
+.app-bar .share {
+    margin-top: 10px;
+}
