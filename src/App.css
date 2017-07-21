@@ -1,13 +1,16 @@
 .app {
     text-align: center;
     width: 90%;
+    max-width: 500px;
     margin: 0 auto;
 }
+
 
 .app .hero {
     position: fixed;
     top: 0;
     width: 90%;
+    max-width: 500px;
     z-index: 10;
     padding-top: 20px;
     background-color: #ffffff;
@@ -15,6 +18,7 @@
 
 .app .content {
     margin-top: 300px;
+    margin-bottom: 200px;
     z-index: 5;
 }
 

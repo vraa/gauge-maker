@@ -18,6 +18,8 @@ const DEFAULT_THEME = {
     progressColor: "#3d3d3d",
     progressRoundedEdge: true,
     downProgressColor: "red",
+    progressFontSize: "30",
+    progressFont: "Serif",
 
     needle: true,
     needleBaseSize: 5,

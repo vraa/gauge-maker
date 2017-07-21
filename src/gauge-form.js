@@ -85,32 +85,50 @@ class GaugeForm extends Component {
                         <div className="field-group progress">
                             <InputColor
                                 id="progressColor"
-                                label="Progress"
+                                label="Color"
                                 value={props.progressColor}
                                 onChange={this.handleColorChange}
                             />
                             <InputField
                                 id="progressWidth"
-                                label="Progress Width"
+                                label="Width"
                                 value={props.progressWidth}
                                 onChange={this.handleChange}
                                 type="range"
                                 min="1"
                                 max="20"
                             />
+                            <InputField
+                                id="progressFontSize"
+                                label="Font Size"
+                                value={props.progressFontSize}
+                                onChange={this.handleChange}
+                                type="range"
+                                min="20"
+                                max="80"
+                            />
+                            <select
+                                id="progressFont"
+                                onChange={this.handleChange}
+                                value={props.progressFont}
+                            >
+                                <option value={"serif"}>Serif</option>
+                                <option value={"Sans-serif"}>Sans-serif</option>
+                                <option value={"Courier"}>Courier</option>
+                            </select>
                         </div>
                     </Tab>
                     <Tab label="Needle">
                         <div className="field-group needle">
                             <InputColor
                                 id="needleColor"
-                                label="Needle"
+                                label="Color"
                                 value={props.needleColor}
                                 onChange={this.handleColorChange}
                             />
                             <InputField
                                 id="needleWidth"
-                                label="Needle"
+                                label="Width"
                                 value={props.needleWidth}
                                 onChange={this.handleChange}
                                 type="range"
@@ -119,13 +137,13 @@ class GaugeForm extends Component {
                             />
                             <InputColor
                                 id="needleBaseColor"
-                                label="Needle Base"
+                                label="Base Color"
                                 value={props.needleBaseColor}
                                 onChange={this.handleColorChange}
                             />
                             <InputField
                                 id="needleBaseSize"
-                                label="Needle Base"
+                                label="Base Size"
                                 value={props.needleBaseSize}
                                 onChange={this.handleChange}
                                 type="range"
@@ -145,13 +163,13 @@ class GaugeForm extends Component {
                         <div className="field-group ticks">
                             <InputColor
                                 id="tickColor"
-                                label="Tick"
+                                label="Color"
                                 value={props.tickColor}
                                 onChange={this.handleColorChange}
                             />
                             <InputField
                                 id="tickWidth"
-                                label="Tick Width"
+                                label="Width"
                                 value={props.tickWidth}
                                 onChange={this.handleChange}
                                 type="range"
@@ -160,7 +178,7 @@ class GaugeForm extends Component {
                             />
                             <InputField
                                 id="tickLength"
-                                label="Tick Length"
+                                label="Length"
                                 value={props.tickLength}
                                 onChange={this.handleChange}
                                 type="range"

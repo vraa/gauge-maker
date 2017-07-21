@@ -4946,9 +4946,9 @@ react-error-overlay@^1.0.9:
     settle-promise "1.0.0"
     source-map "0.5.6"
 
-react-radial-gauge@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/react-radial-gauge/-/react-radial-gauge-0.0.1.tgz#724aeb262c2c743c8b201e4ca2628875c55bc31e"
+react-radial-gauge@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/react-radial-gauge/-/react-radial-gauge-0.1.0.tgz#d302b4a593eb5cf93a8190f234b0af6651cd640c"
 
 react-scripts@1.0.10:
   version "1.0.10"

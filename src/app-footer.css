@@ -1,4 +1,7 @@
 .app-footer {
+    position: fixed;
+    bottom: 10px;
     font-size: .8rem;
     margin-top: 20px;
+    background-color: #ffffff;
 }

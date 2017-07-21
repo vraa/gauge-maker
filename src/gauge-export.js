@@ -62,13 +62,19 @@ class GaugeExport extends Component {
             <div className="gauge-export">
                 <p>Generate</p>
                 <button
-                    className={this.state.selected === 'svg' ? 'selected': ''}
-                    onClick={this.handleDownloadSVG}>SVG</button>
+                    className={this.state.selected === 'svg' ? 'selected' : ''}
+                    onClick={this.handleDownloadSVG}>SVG
+                </button>
                 <button
-                    className={this.state.selected === 'png' ? 'selected': ''}
-                    onClick={this.handleDownloadPNG}>PNG</button>
+                    className={this.state.selected === 'png' ? 'selected' : ''}
+                    onClick={this.handleDownloadPNG}>PNG
+                </button>
                 <p>
                     {downloadElm}
+                </p>
+                <p className="use-react">
+                    <a href="https://www.npmjs.com/package/react-radial-gauge" title="React Radial Gauge"> Use as a
+                        React Component</a>
                 </p>
             </div>
         )

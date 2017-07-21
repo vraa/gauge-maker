@@ -1,14 +1,16 @@
 .gauge-export {
-    margin-top: 20px;
-    background-color: #fafafa;
-    border: 1px dashed #dadada;
+    position: fixed;
+    bottom: 10px;
+    width: 90%;
+    max-width: 500px;
+    background-color:rgba(44, 62, 80,0.8);
     padding: 10px 0;
+    color: #ffffff;
 }
 
 .gauge-export p {
     font-size: .8rem;
     margin-bottom: 10px;
-    color: #6d6d6d;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -21,15 +23,29 @@
     letter-spacing: 2px;
     cursor: pointer;
     background-color: transparent;
-    border: 1px solid #4FC3F7;
-    color: #4d4d4d;
+    border: 1px solid #34495e;
+    color: #f1c40f;
+
 }
 
 .gauge-export button.selected {
-    background-color: #4FC3F7;
+    background-color: #ecf0f1;
+    color: #2c3e50;
 }
 
 .gauge-export .cta {
     margin-top: 30px;
-    background-color: #4FC3F7;
+    background-color: #e67e22;
+    color: #ffffff;
+}
+
+.gauge-export .use-react {
+    margin-top: 20px;
+    color: #ffffff;
+}
+
+.use-react a {
+    color: #f1c40f;
+    text-decoration: none;
+    border-bottom: 1px dashed;
 }

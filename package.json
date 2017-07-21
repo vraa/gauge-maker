@@ -7,7 +7,7 @@
     "react": "^15.6.1",
     "react-color": "^2.13.1",
     "react-dom": "^15.6.1",
-    "react-radial-gauge": "^0.0.1"
+    "react-radial-gauge": "^0.1.0"
   },
   "devDependencies": {
     "react-scripts": "1.0.10"

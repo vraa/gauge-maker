@@ -10,7 +10,7 @@ import AppFooter from "./app-footer";
 class App extends Component {
     constructor() {
         super();
-        this.state = themes.regular;
+        this.state = themes.flat;
     }
 
     handleGaugeChange = (st) => {
@@ -46,7 +46,6 @@ class App extends Component {
                         onChange={this.handleGaugeChange}
                         {...this.state}
                     />
-                    <AppFooter/>
                 </section>
                 <GaugeExport
                     {...this.state}

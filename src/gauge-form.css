@@ -32,3 +32,10 @@
 .sizes .field-group {
     margin-left: 20px;
 }
+
+.field-group select {
+    padding: 5px;
+    text-transform: uppercase;
+    height: 30px;
+    transform: translateY(100%);
+}
