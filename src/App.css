@@ -1,6 +1,21 @@
-.App {
+.app {
     text-align: center;
-    padding: 20px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.app .hero {
+    position: fixed;
+    top: 0;
+    width: 90%;
+    z-index: 10;
+    padding-top: 20px;
+    background-color: #ffffff;
+}
+
+.app .content {
+    margin-top: 300px;
+    z-index: 5;
 }
 
 .gauge-display {
@@ -11,8 +26,4 @@
     align-items: center;
     justify-content: center;
     margin-top: 20px;
-}
-
-.gauge-display .gauge {
-
 }

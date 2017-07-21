@@ -1,0 +1,21 @@
+.tabs {
+    margin: 40px 0;
+}
+
+.tabs ul li {
+    display: inline-block;
+    margin-left: 30px;
+    padding: 5px 0;
+}
+
+.tabs ul li:first-child {
+    margin-left: 0;
+}
+
+.tabs li {
+    border-bottom: 3px solid #dadada;
+}
+
+.tabs li.active {
+    border-bottom-color: #3d3d3d;
+}

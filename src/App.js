@@ -30,24 +30,27 @@ class App extends Component {
 
     render() {
         return (
-            <div className="App">
-                <AppBar/>
-
-                <div className="gauge-display">
-                    <Gauge
-                        className="gauge"
+            <div className="app">
+                <section className="hero">
+                    <AppBar/>
+                    <div className="gauge-display">
+                        <Gauge
+                            className="gauge"
+                            {...this.state}
+                        />
+                    </div>
+                </section>
+                <section className="content">
+                    <Themes onChange={this.applyTheme}/>
+                    <GaugeForm
+                        onChange={this.handleGaugeChange}
                         {...this.state}
                     />
-                </div>
-                <Themes onChange={this.applyTheme}/>
+                    <AppFooter/>
+                </section>
                 <GaugeExport
                     {...this.state}
                 />
-                <GaugeForm
-                    onChange={this.handleGaugeChange}
-                    {...this.state}
-                />
-                <AppFooter/>
             </div>
         );
     }
