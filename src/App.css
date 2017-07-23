@@ -5,15 +5,14 @@
     margin: 0 auto;
 }
 
-
 .app .hero {
     position: fixed;
-    top: 0;
-    width: 90%;
-    max-width: 500px;
+    top: 40px;
+    left: 0;
+    width: 100%;
     z-index: 10;
-    padding-top: 20px;
-    background-color: #ffffff;
+    background-color: #fafafa;
+    padding: 20px 0;
 }
 
 .app .content {
@@ -29,5 +28,4 @@
     overflow: auto;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
 }

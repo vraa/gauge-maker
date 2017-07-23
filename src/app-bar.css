@@ -1,7 +1,7 @@
 .app-bar {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding-bottom: 10px;
+    padding: 10px 0;
 }
 
 .app-bar h1 {

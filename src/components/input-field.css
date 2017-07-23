@@ -15,8 +15,44 @@
 
 .input-field .input-value {
     font-size: .7rem;
-    color: #aaaaaa;
+    color: #b9a01a;
     margin-top: 5px;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+
+input[type=range] {
+    -webkit-appearance: none;
+    width: 90%;
+    border-radius: 5px;
+    height: 6px;
+    border: 1px solid #bdc3c7;
+    background-color: #fff;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #b9a01a;
+    margin-top: -2px;
+}
+
+input[type=range]::-moz-range-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #b9a01a;
+    margin-top: -2px;
+}
+
+input[type=range]::-moz-range-track {
+    background-color: transparent;
+}
+
+
+

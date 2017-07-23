@@ -4,7 +4,7 @@
 
 .tabs ul li {
     display: inline-block;
-    margin-left: 30px;
+    margin-left: 15px;
     padding: 5px 0;
     cursor: pointer;
 }
@@ -14,9 +14,11 @@
 }
 
 .tabs li {
-    border-bottom: 3px solid #dadada;
+    border-bottom: 3px solid rgba(0,0,0,0);
+    color: #b9a01a;
 }
 
 .tabs li.active {
-    border-bottom-color: #3d3d3d;
+    color: #50460b;
+    border-bottom-color: #b9a01a;
 }

@@ -29,15 +29,17 @@ class App extends Component {
     render() {
         return (
             <div className="app">
-                <section className="hero">
+                <div className="wrapper">
                     <AppBar/>
+                </div>
+                <div className="hero">
                     <div className="gauge-display">
                         <Gauge
                             className="gauge"
                             {...this.state}
                         />
                     </div>
-                </section>
+                </div>
                 <section className="content">
                     <Themes onChange={this.applyTheme}/>
                     <GaugeForm
