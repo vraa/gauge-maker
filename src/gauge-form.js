@@ -5,6 +5,7 @@ import InputColor from "./components/input-color";
 import "./gauge-form.css";
 import Tabs from "./components/tabs";
 import Tab from "./components/tab";
+import GaugeExport from "./gauge-export";
 
 class GaugeForm extends Component {
 
@@ -185,6 +186,11 @@ class GaugeForm extends Component {
                                 min="1"
                                 max="20"
                             />
+                        </div>
+                    </Tab>
+                    <Tab label="Generate">
+                        <div className="field-group generate">
+                            <GaugeExport/>
                         </div>
                     </Tab>
                 </Tabs>

@@ -9,6 +9,7 @@
     padding: 0;
     border: 1px solid #5d5d5d;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .input-color .sketch-picker {

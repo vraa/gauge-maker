@@ -7,6 +7,12 @@
     border: 1px solid #dadada;
     border-radius: 5px;
     padding: 10px;
+    grid-row-gap: 20px;
+}
+
+.field-group.generate {
+    grid-template-columns: 1fr;
+    padding: 50px 0;
 }
 
 /* colors and sizes */

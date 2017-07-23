@@ -4,8 +4,6 @@ import AppBar from "./app-bar";
 import Themes, {themes} from "./themes";
 import Gauge from "react-radial-gauge";
 import GaugeForm from "./gauge-form";
-import GaugeExport from "./gauge-export";
-import AppFooter from "./app-footer";
 
 class App extends Component {
     constructor() {
@@ -47,9 +45,6 @@ class App extends Component {
                         {...this.state}
                     />
                 </section>
-                <GaugeExport
-                    {...this.state}
-                />
             </div>
         );
     }

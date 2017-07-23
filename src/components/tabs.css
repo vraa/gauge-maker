@@ -6,6 +6,7 @@
     display: inline-block;
     margin-left: 30px;
     padding: 5px 0;
+    cursor: pointer;
 }
 
 .tabs ul li:first-child {
