@@ -17,9 +17,7 @@ class GaugeExport extends Component {
     };
 
     getGaugeContent = () => {
-        let svgElm = document.querySelector(".gauge");
-        let svgXML = new XMLSerializer().serializeToString(svgElm);
-        return svgXML;
+        return new XMLSerializer().serializeToString(document.querySelector(".gauge"));
     };
 
     handleDownloadSVG = (e) => {
@@ -39,8 +37,10 @@ class GaugeExport extends Component {
         canvas.width = this.props.size;
         canvas.height = this.props.size;
         imgElm.onload = () => {
+            debugger;
             canvas.getContext('2d').drawImage(imgElm, 0, 0);
             let png = canvas.toDataURL("image/png");
+            console.log(png);
             this.setState({
                 selected: 'png',
                 downloadContent: png
