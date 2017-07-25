@@ -15,10 +15,10 @@
 
 .tabs li {
     border-bottom: 3px solid rgba(0,0,0,0);
-    color: #b9a01a;
+    color: #f18985;
 }
 
 .tabs li.active {
-    color: #50460b;
-    border-bottom-color: #b9a01a;
+    color: #EC5D57;
+    border-bottom-color: #EC5D57;
 }
