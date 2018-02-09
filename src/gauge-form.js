@@ -197,6 +197,10 @@ class GaugeForm extends Component {
                         </div>
                     </Tab>
                 </Tabs>
+
+                <div className='ad rectangle'>
+                    <img src="https://placeimg.com/336/280/any"/>
+                </div>
             </form>
         )
     }

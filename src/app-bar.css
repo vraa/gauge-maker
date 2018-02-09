@@ -24,3 +24,15 @@
     border-bottom: 1px dashed;
     padding-top: 3px;
 }
+
+.ad.leaderboard {
+    display: none;
+}
+
+@media (min-width : 600px) {
+    .ad.leaderboard {
+        margin: 10px 0;
+        text-align: center;
+        display: block;
+    }
+}
