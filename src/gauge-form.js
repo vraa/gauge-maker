@@ -199,7 +199,10 @@ class GaugeForm extends Component {
                 </Tabs>
 
                 <div className='ad rectangle'>
-                    <img src="https://placeimg.com/336/280/any"/>
+                <ins className="adsbygoogle"
+                    style={{display:'inline-block',width:'300px',height:'250px'}}
+                    data-ad-client="ca-pub-4601926589924919"
+                    data-ad-slot="8304910751"></ins>
                 </div>
             </form>
         )
