@@ -1,11 +1,12 @@
 .themes {
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 .themes h2 {
     font-size: .8rem;
     text-transform: uppercase;
     display: inline-block;
+    color: #9d9d9d;
 }
 
 .themes select {

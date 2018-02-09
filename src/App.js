@@ -1,9 +1,9 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import "./App.css";
 import AppBar from "./app-bar";
-import Themes, {themes} from "./themes";
 import Gauge from "react-radial-gauge";
 import GaugeForm from "./gauge-form";
+import {themes} from "./themes";
 
 class App extends Component {
     constructor() {
@@ -29,21 +29,16 @@ class App extends Component {
     render() {
         return (
             <div className="app">
-                <div className="wrapper">
-                    <AppBar/>
-                </div>
-                <div className="hero">
-                    <div className="gauge-display">
-                        <Gauge
-                            className="gauge"
-                            {...this.state}
-                        />
-                    </div>
+                <div className="gauge-display">
+                    <Gauge
+                        className="gauge"
+                        {...this.state}
+                    />
                 </div>
                 <section className="content">
-                    <Themes onChange={this.applyTheme}/>
                     <GaugeForm
                         onChange={this.handleGaugeChange}
+                        onThemeChange={this.applyTheme}
                         {...this.state}
                     />
                 </section>

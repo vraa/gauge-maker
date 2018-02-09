@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import "./components/tabs";
 import InputField from "./components/input-field";
 import InputColor from "./components/input-color";
@@ -6,6 +6,7 @@ import "./gauge-form.css";
 import Tabs from "./components/tabs";
 import Tab from "./components/tab";
 import GaugeExport from "./gauge-export";
+import Themes from "./themes";
 
 class GaugeForm extends Component {
 
@@ -40,6 +41,8 @@ class GaugeForm extends Component {
         let props = this.props;
         return (
             <form className="gauge-form">
+                <p>Customize themes and individual components of the guage per your need</p>
+                <Themes onChange={this.props.onThemeChange} />
                 <Tabs>
                     <Tab label="Gauge">
                         <div className="field-group gauge">
@@ -190,7 +193,7 @@ class GaugeForm extends Component {
                     </Tab>
                     <Tab label="Generate">
                         <div className="field-group generate">
-                            <GaugeExport/>
+                            <GaugeExport />
                         </div>
                     </Tab>
                 </Tabs>

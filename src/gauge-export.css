@@ -9,7 +9,11 @@
     letter-spacing: 2px;
     cursor: pointer;
     background-color: transparent;
-    border: 1px solid #34495e;
+    border: 1px solid #9d9d9d;
+}
+
+.gauge-export button:first-child {
+    border-right: none;
 }
 
 .gauge-export button.selected {
