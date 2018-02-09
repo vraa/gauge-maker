@@ -34,13 +34,12 @@ class GaugeExport extends Component {
         let imgElm = new Image();
         imgElm.src = this.encodeSVG(svgXML);
         let canvas = document.createElement('canvas');
-        canvas.width = this.props.size;
-        canvas.height = this.props.size;
+        canvas.width = this.props.size || 300;
+        canvas.height = this.props.size || 300;
         imgElm.onload = () => {
-            debugger;
             canvas.getContext('2d').drawImage(imgElm, 0, 0);
             let png = canvas.toDataURL("image/png");
-            console.log(png);
+            
             this.setState({
                 selected: 'png',
                 downloadContent: png
@@ -48,25 +47,27 @@ class GaugeExport extends Component {
         };
     };
 
-    openContent = (png) => {
-        window.open(this.state.downloadContent, 'png');
+    openContent = (e) => {
+        e.preventDefault();
+        let win = window.open();
+        win.document.write('<iframe src="' + this.state.downloadContent + '" frameborder="0" style="border:0; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%;" allowfullscreen></iframe>')
     };
 
     render() {
         let downloadElm = null;
-
+        console.log(this.state.downloadContent);
         if (this.state.downloadContent) {
-            downloadElm = <button className="cta" onClick={this.openContent}>Download</button>;
+            downloadElm = <button className="cta" onClick={this.openContent.bind(this)}>Download</button>;
         }
         return (
             <div className="gauge-export">
                 <button
                     className={this.state.selected === 'svg' ? 'selected' : ''}
-                    onClick={this.handleDownloadSVG}>SVG
+                    onClick={this.handleDownloadSVG.bind(this)}>SVG
                 </button>
                 <button
                     className={this.state.selected === 'png' ? 'selected' : ''}
-                    onClick={this.handleDownloadPNG}>PNG
+                    onClick={this.handleDownloadPNG.bind(this)}>PNG
                 </button>
                 <p>
                     {downloadElm}
