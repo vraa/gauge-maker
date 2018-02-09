@@ -9,7 +9,7 @@
     letter-spacing: 2px;
     cursor: pointer;
     background-color: transparent;
-    border: 1px solid #9d9d9d;
+    border: 1px solid #7C94EC;
 }
 
 .gauge-export button:first-child {
@@ -17,15 +17,16 @@
 }
 
 .gauge-export button.selected {
-    background-color: #ecf0f1;
-    color: #2c3e50;
+    background-color: #7C94EC;
+    color: #fff;
 }
 
 .gauge-export .cta {
     margin-top: 30px;
-    background-color: #2d2d2d;
+    background-color: #1124A7;
     border-radius: 3px;
     color: #ffffff;
+    border: 0;
 }
 
 .gauge-export .use-react {

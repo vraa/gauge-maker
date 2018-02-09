@@ -56,7 +56,7 @@ class GaugeExport extends Component {
         let downloadElm = null;
 
         if (this.state.downloadContent) {
-            downloadElm = <button className="cta" onClick={this.openContent}>⇓ Save</button>;
+            downloadElm = <button className="cta" onClick={this.openContent}>Download</button>;
         }
         return (
             <div className="gauge-export">
