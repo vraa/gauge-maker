@@ -44,6 +44,7 @@ class App extends Component {
                             {...this.state}
                         />
                     </section>
+                    <footer>Built by <a href="https://veerasundar.com" title="Veera - JavaScript / React Developer">Veera</a>.</footer>
                 </div>
             </main>
         );
