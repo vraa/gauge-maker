@@ -22,6 +22,7 @@ body {
     box-shadow: 0 0 20px #1124A7;
 }
 
+
 .gauge-display {
     display: grid;
     align-items: center;
@@ -31,12 +32,17 @@ body {
 }
 
 @media (min-width: 600px) {
+    .main {
+        max-width: 800px;
+        margin: 0 auto;
+    }
     .app {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-areas: " header header"
                             "hero content";
         max-width: 800px;
+        width: 100%;
     }
     .app-bar {
         grid-area: header;

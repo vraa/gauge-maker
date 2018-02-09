@@ -7,10 +7,6 @@ class AppBar extends Component {
         return (
             <header className="app-bar">
                 <h1>Gauge Generator</h1>
-                <p>
-                    <a className="react" href="https://www.npmjs.com/package/react-radial-gauge"
-                       title="React Radial Gauge - visual gauges for your react app">React Component</a>
-                </p>
             </header>
         )
     }

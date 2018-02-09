@@ -3,7 +3,7 @@ import "./App.css";
 import AppBar from "./app-bar";
 import Gauge from "react-radial-gauge";
 import GaugeForm from "./gauge-form";
-import {themes} from "./themes";
+import { themes } from "./themes";
 
 class App extends Component {
     constructor() {
@@ -28,21 +28,24 @@ class App extends Component {
 
     render() {
         return (
-            <div className="app">
-                <div className="gauge-display">
-                    <Gauge
-                        className="gauge"
-                        {...this.state}
-                    />
+            <main className="main">
+                <AppBar/>
+                <div className="app">
+                    <div className="gauge-display">
+                        <Gauge
+                            className="gauge"
+                            {...this.state}
+                        />
+                    </div>
+                    <section className="content">
+                        <GaugeForm
+                            onChange={this.handleGaugeChange}
+                            onThemeChange={this.applyTheme}
+                            {...this.state}
+                        />
+                    </section>
                 </div>
-                <section className="content">
-                    <GaugeForm
-                        onChange={this.handleGaugeChange}
-                        onThemeChange={this.applyTheme}
-                        {...this.state}
-                    />
-                </section>
-            </div>
+            </main>
         );
     }
 }
