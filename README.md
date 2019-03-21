@@ -6,4 +6,4 @@ Create beautiful Gauges online and export them as SVG or PNG files to use it wit
 
 ## Screenshot
 
-![Online Gauge Generator](https://pbs.twimg.com/media/DE6hMPkVYAAMZhQ.jpg:large)
+[![Online Gauge Generator](https://i.imgur.com/MZf5Z3B.png)](https://veerasundar.com/gauge-generator/)
