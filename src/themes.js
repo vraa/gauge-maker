@@ -2,31 +2,11 @@ import React, {Component} from "react";
 import "./themes.css";
 
 const DEFAULT_THEME = {
-    size: 200,
-
-    dialWidth: 10,
-    dialColor: "#eee",
-
-    tickLength: 5,
-    tickWidth: 2,
     tickColor: "#cacaca",
-    tickInterval: 10,
-
-    maximumValue: 100,
-    currentValue: 25,
-    progressWidth: 5,
-    progressColor: "#3d3d3d",
-    progressRoundedEdge: true,
-    downProgressColor: "red",
-    progressFontSize: "30",
-    progressFont: "Serif",
-
-    needle: true,
-    needleBaseSize: 5,
+    needleColor: '#8a8a8a',
+    dialColor: "#eee",
     needleBaseColor: '#9d9d9d',
-    needleWidth: 2,
-    needleSharp: false,
-    needleColor: '#8a8a8a'
+    progressColor: "#3d3d3d",
 };
 
 const themes = {
@@ -93,7 +73,7 @@ class Themes extends Component {
         let themeNames = Object.keys(themes);
         return (
             <div className="themes">
-                <h2>Themes</h2>
+                <h2>Theme:</h2>
                 <select onChange={this.applyTheme}>
                     {
                         themeNames.map((theme) => {

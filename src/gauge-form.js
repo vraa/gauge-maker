@@ -1,212 +1,236 @@
-import React, { Component } from "react";
-import "./components/tabs";
+import React, { PureComponent } from "react";
 import InputField from "./components/input-field";
 import InputColor from "./components/input-color";
 import "./gauge-form.css";
-import Tabs from "./components/tabs";
-import Tab from "./components/tab";
-import GaugeExport from "./gauge-export";
 import Themes from "./themes";
 
-class GaugeForm extends Component {
+const VARIANTS = {
+  1: {
+    size: 160,
+    dialWidth: 5,
+    progressWidth: 10,
+    needleSharp: true,
+    progressFontSize: "25",
+    needleBaseSize: 10,
+    needleWidth: 10,
+  },
+  2: {
+    size: 200,
+    dialWidth: 10,
+    progressWidth: 7,
+    needleSharp: true,
+    progressFontSize: "35",
+    needleBaseSize: 5,
+    needleWidth: 5,
+  },
+  3: {
+    size: 250,
+    dialWidth: 20,
+    progressWidth: 7,
+    needleSharp: true,
+    progressFontSize: "35",
+    needleBaseSize: 15,
+    needleWidth: 15,
+  }
+};
 
-    constructor() {
-        super();
-        this.state = {
-            size: 120,
-            currentValue: 60
-        }
-    };
+class GaugeForm extends PureComponent {
 
-    handleChange = (e) => {
-        let st = {};
-        st[e.target.id] = e.target.value;
-        this.props.onChange(st);
-    };
+  state = {
+    size: 120,
+    currentValue: 60
+  };
 
-    handleColorChange = (id, color) => {
-        let st = {};
-        st[id] = color.hex;
-        this.props.onChange(st);
-    };
+  handleChange = (e) => {
+    let st = {};
+    st[e.target.id] = e.target.value;
+    this.props.onChange(st);
+  };
 
-    handleCheckChange = (e) => {
-        console.log(e.target.checked);
-        let st = {};
-        st[e.target.id] = e.target.checked;
-        this.props.onChange(st);
-    };
+  handleColorChange = (id, color) => {
+    let st = {};
+    st[id] = color.hex;
+    this.props.onChange(st);
+  };
 
-    render() {
-        let props = this.props;
-        return (
-            <form className="gauge-form">
-                <p>Customize themes and individual components of the guage per your need</p>
-                <Themes onChange={this.props.onThemeChange} />
-                <Tabs>
-                    <Tab label="Gauge">
-                        <div className="field-group gauge">
-                            <InputField
-                                id="size"
-                                label="Size"
-                                onChange={this.handleChange}
-                                type="range"
-                                min="60"
-                                max="200"
-                                value={props.size}
-                            />
-                            <InputField
-                                id="currentValue"
-                                label="Value"
-                                value={props.currentValue}
-                                onChange={this.handleChange}
-                                type="range"
-                                min="0"
-                                max="100"
-                            />
-                        </div>
-                    </Tab>
-                    <Tab label="Dial">
-                        <div className="field-group dial">
-                            <InputColor
-                                id="dialColor"
-                                label="Color"
-                                value={props.dialColor}
-                                onChange={this.handleColorChange}
-                            />
-                            <InputField
-                                id="dialWidth"
-                                label="Width"
-                                value={props.dialWidth}
-                                onChange={this.handleChange}
-                                type="range"
-                                min="0"
-                                max="20"
-                            />
-                        </div>
-                    </Tab>
-                    <Tab label="Progress">
-                        <div className="field-group progress">
-                            <InputColor
-                                id="progressColor"
-                                label="Color"
-                                value={props.progressColor}
-                                onChange={this.handleColorChange}
-                            />
-                            <InputField
-                                id="progressWidth"
-                                label="Width"
-                                value={props.progressWidth}
-                                onChange={this.handleChange}
-                                type="range"
-                                min="1"
-                                max="20"
-                            />
-                            <InputField
-                                id="progressFontSize"
-                                label="Font Size"
-                                value={props.progressFontSize}
-                                onChange={this.handleChange}
-                                type="range"
-                                min="20"
-                                max="80"
-                            />
-                            <select
-                                id="progressFont"
-                                onChange={this.handleChange}
-                                value={props.progressFont}
-                            >
-                                <option value={"serif"}>Serif</option>
-                                <option value={"Sans-serif"}>Sans-serif</option>
-                                <option value={"Courier"}>Courier</option>
-                            </select>
-                        </div>
-                    </Tab>
-                    <Tab label="Needle">
-                        <div className="field-group needle">
-                            <InputColor
-                                id="needleColor"
-                                label="Color"
-                                value={props.needleColor}
-                                onChange={this.handleColorChange}
-                            />
-                            <InputField
-                                id="needleWidth"
-                                label="Width"
-                                value={props.needleWidth}
-                                onChange={this.handleChange}
-                                type="range"
-                                min="0"
-                                max="20"
-                            />
-                            <InputColor
-                                id="needleBaseColor"
-                                label="Base Color"
-                                value={props.needleBaseColor}
-                                onChange={this.handleColorChange}
-                            />
-                            <InputField
-                                id="needleBaseSize"
-                                label="Base Size"
-                                value={props.needleBaseSize}
-                                onChange={this.handleChange}
-                                type="range"
-                                min="0"
-                                max="20"
-                            />
-                            <InputField
-                                id="needleSharp"
-                                label="Sharp Needle?"
-                                checked={props.needleSharp}
-                                onChange={this.handleCheckChange}
-                                type="checkbox"
-                            />
-                        </div>
-                    </Tab>
-                    <Tab label="Ticks">
-                        <div className="field-group ticks">
-                            <InputColor
-                                id="tickColor"
-                                label="Color"
-                                value={props.tickColor}
-                                onChange={this.handleColorChange}
-                            />
-                            <InputField
-                                id="tickWidth"
-                                label="Width"
-                                value={props.tickWidth}
-                                onChange={this.handleChange}
-                                type="range"
-                                min="1"
-                                max="10"
-                            />
-                            <InputField
-                                id="tickLength"
-                                label="Length"
-                                value={props.tickLength}
-                                onChange={this.handleChange}
-                                type="range"
-                                min="1"
-                                max="20"
-                            />
-                        </div>
-                    </Tab>
-                    <Tab label="Generate">
-                        <div className="field-group generate">
-                            <GaugeExport />
-                        </div>
-                    </Tab>
-                </Tabs>
+  handleCheckChange = (e) => {
+    let st = {};
+    st[e.target.id] = e.target.checked;
+    this.props.onChange(st);
+  };
 
-                <div className='ad rectangle'>
-                <ins className="adsbygoogle"
-                    style={{display:'inline-block',width:'300px',height:'250px'}}
-                    data-ad-client="ca-pub-4601926589924919"
-                    data-ad-slot="8304910751"></ins>
-                </div>
-            </form>
-        )
-    }
+  handleVariantChange = (e) => {
+    e.preventDefault();
+    const variant = e.target.value;
+    this.props.onChange(VARIANTS[variant]);
+  };
+
+  render() {
+    let props = this.props;
+    return (
+      <form className="gauge-form">
+        <div className={'theme-and-variant'}>
+          <Themes onChange={this.props.onThemeChange}/>
+          <div className={'variants'}>
+            <button value={1} onClick={this.handleVariantChange}>Variant 1</button>
+            <button value={2} onClick={this.handleVariantChange}>Variant 2</button>
+            <button value={3} onClick={this.handleVariantChange}>Variant 3</button>
+          </div>
+        </div>
+        <div className={'field-group colors'}>
+          <InputColor
+            id="dialColor"
+            label="Dial"
+            value={props.dialColor}
+            onChange={this.handleColorChange}
+          />
+          <InputColor
+            id="progressColor"
+            label="Progress"
+            value={props.progressColor}
+            onChange={this.handleColorChange}
+          />
+          <InputColor
+            id="needleColor"
+            label="Needle"
+            value={props.needleColor}
+            onChange={this.handleColorChange}
+          />
+          <InputColor
+            id="needleBaseColor"
+            label="Base"
+            value={props.needleBaseColor}
+            onChange={this.handleColorChange}
+          />
+          <InputColor
+            id="tickColor"
+            label="Tick"
+            value={props.tickColor}
+            onChange={this.handleColorChange}
+          />
+        </div>
+        <div className={'sliders row-1'}>
+          <div className={'field-group values'}>
+            <h3>Font</h3>
+            <InputField
+              id="progressFontSize"
+              label="Size"
+              value={props.progressFontSize}
+              onChange={this.handleChange}
+              type="range"
+              min="20"
+              max="80"
+            />
+            <div className={'select-field'}>
+              <label>Type</label>
+              <select
+                id="progressFont"
+                onChange={this.handleChange}
+                value={props.progressFont}
+              >
+                <option value={"serif"}>Serif</option>
+                <option value={"Sans-serif"}>Sans-serif</option>
+                <option value={"Courier"}>Courier</option>
+              </select>
+            </div>
+          </div>
+          <div className="field-group gauge">
+            <h3>Gauge</h3>
+            <InputField
+              id="size"
+              label="Size"
+              onChange={this.handleChange}
+              type="range"
+              min="150"
+              max="300"
+              value={props.size}
+            />
+            <InputField
+              id="currentValue"
+              label="Value"
+              value={props.currentValue}
+              onChange={this.handleChange}
+              type="range"
+              min="0"
+              max="100"
+            />
+          </div>
+        </div>
+        <div className={'sliders row-2'}>
+          <div className="field-group dial">
+            <h3>Dial</h3>
+            <InputField
+              id="dialWidth"
+              label="Width"
+              value={props.dialWidth}
+              onChange={this.handleChange}
+              type="range"
+              min="0"
+              max="20"
+            />
+            <InputField
+              id="progressWidth"
+              label="Width"
+              value={props.progressWidth}
+              onChange={this.handleChange}
+              type="range"
+              min="1"
+              max="20"
+            />
+          </div>
+          <div className="field-group needle">
+            <h3>Needle</h3>
+            <InputField
+              id="needleWidth"
+              label="Width"
+              value={props.needleWidth}
+              onChange={this.handleChange}
+              type="range"
+              min="0"
+              max="20"
+            />
+            <InputField
+              id="needleBaseSize"
+              label="Base Size"
+              value={props.needleBaseSize}
+              onChange={this.handleChange}
+              type="range"
+              min="0"
+              max="20"
+            />
+            <InputField
+              id="needleSharp"
+              label="Sharp Needle?"
+              checked={props.needleSharp}
+              onChange={this.handleCheckChange}
+              type="checkbox"
+            />
+          </div>
+          <div className="field-group ticks">
+            <h3>Tick</h3>
+            <InputField
+              id="tickWidth"
+              label="Width"
+              value={props.tickWidth}
+              onChange={this.handleChange}
+              type="range"
+              min="1"
+              max="10"
+            />
+            <InputField
+              id="tickLength"
+              label="Length"
+              value={props.tickLength}
+              onChange={this.handleChange}
+              type="range"
+              min="1"
+              max="20"
+            />
+          </div>
+        </div>
+      </form>
+    )
+  }
 }
 
 export default GaugeForm;

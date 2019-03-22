@@ -2,66 +2,72 @@
 .gauge-form {
     text-align: left;
 }
-
 .field-group {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    border-top: 3px solid #CCD4F7;
+    box-shadow: 0 0 20px #f0f0f0;
+    margin: 10px;
     border-radius: 5px;
-    margin-top: -3px;
-    padding: 10px;
-    grid-row-gap: 20px;
+    border: 1px solid #f0f0f0;
+    padding: 20px;
 }
-
+.field-group h3 {
+    margin-bottom: 20px;
+}
+.field-group .input-field {
+    margin-bottom: 20px;
+}
+.field-group .input-field:last-child {
+    margin-bottom: 0;
+}
+.field-group.colors {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.field-group.colors .input-color {
+    margin-right: 20px;
+}
+.field-group.colors .input-field {
+    margin-bottom: 0;
+}
 .field-group.generate {
     grid-template-columns: 1fr;
     padding: 20px 0;
 }
-
-/* colors and sizes */
-
-.gauge-form legend {
-    float: left;
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #7C94EC;
-}
-
-.gauge-form fieldset {
+.sliders.row-1{
     display: grid;
-    justify-items: center;
+    grid-template-columns: 1fr 1fr;
+}
+.sliders.row-2{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.select-field {
+    display: flex;
     align-items: center;
 }
-
-.input-field {
-    margin-top: 10px;
+.select-field label {
+    margin-right: 10px;
 }
-
-.colors .field-group,
-.sizes .field-group {
-    margin-left: 20px;
-}
-
-.field-group select {
-    padding: 5px;
+.select-field select {
+    padding: 3px;
     text-transform: uppercase;
     height: 30px;
-    transform: translateY(100%);
+    width: 100%;
+    border-radius: 5px;
 }
 
-.gauge-form p {
-    font-size: .9rem;
-    line-height: 15pt;
+.theme-and-variant {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
 }
-
-.ad.rectangle {
-    display: none;
+.variants {
+    justify-self: end;
 }
-
-@media (min-width: 600px) {
-    .ad.rectangle {
-        display: block;
-        text-align: center;
-        margin: 10px;
-    }
+.variants button {
+    border: 1px solid #9d9d9d;
+    border-radius: 5px;
+    background: none;
+    margin-right: 10px;
+    padding: 5px 10px;
 }

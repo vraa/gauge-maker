@@ -1,5 +1,5 @@
 .themes {
-    margin-top: 40px;
+    padding: 10px;
 }
 
 .themes h2 {
@@ -15,6 +15,7 @@
     font-size: .7rem;
     padding: 5px;
     letter-spacing: 1px;
+    border-radius: 5px;
 }
 
 .themes select option {

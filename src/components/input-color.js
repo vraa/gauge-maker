@@ -4,12 +4,9 @@ import "./input-color.css";
 
 class InputColor extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            pickerOpen: false
-        }
-    }
+    state = {
+        pickerOpen: false
+    };
 
     handleChange = (color) => {
         this.props.onChange(this.props.id, color);
