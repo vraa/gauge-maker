@@ -34,6 +34,14 @@ class App extends Component {
     ...themes.watermelon
   };
 
+  componentDidMount() {
+    const s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = "//cdn.carbonads.com/carbon.js?serve=CK7DLK7W&placement=veerasundarcom";
+    this.carbonRef.appendChild(s);
+  }
+
   handleGaugeChange = (st) => {
     this.setState(Object.assign(
       {},
@@ -90,8 +98,8 @@ class App extends Component {
             <footer>
               <button onClick={this.handleGenerateClick}>Generate SVG</button>
             </footer>
-            <div className={'carbon'}>
-              <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CK7DLK7W&placement=veerasundarcom" id="_carbonads_js"></script>
+            <div className={'carbon'} ref={el => {this.carbonRef = el}}>
+
             </div>
           </div>
           <section className="content">
