@@ -36,6 +36,7 @@ class App extends Component {
 
   componentDidMount() {
     const s = document.createElement('script');
+    s.id = "_carbonads_js";
     s.type = 'text/javascript';
     s.async = true;
     s.src = "//cdn.carbonads.com/carbon.js?serve=CK7DLK7W&placement=veerasundarcom";
