@@ -110,11 +110,12 @@ footer button {
 .showcase {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 40px 1fr 80px 110px;
+    grid-template-rows: 40px 1fr 100px 120px;
     align-items: center;
 }
-
 .carbon {
-    background-color: #e0e0e0;
-
+    position: relative;
+}
+.carbon a {
+    text-decoration: none;
 }
