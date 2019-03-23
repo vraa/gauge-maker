@@ -6,11 +6,19 @@
     box-shadow: 0 0 20px #f0f0f0;
     margin: 10px;
     border-radius: 5px;
-    border: 1px solid #f0f0f0;
+    border: 1px solid #E0E0E0;
     padding: 20px;
+    background-image: linear-gradient(to top, #FAFAFA 0%, #f0f0f0 100%);
+    transition: transform .2s;
+}
+.field-group:hover {
+    background-image: linear-gradient(to top, #FAFAFA 0%, #E8EAF6 100%);
+    border-color:#C5CAE9;
+    transform: translate(0px,-2px);
 }
 .field-group h3 {
     margin-bottom: 20px;
+    color: #000;
 }
 .field-group .input-field {
     margin-bottom: 20px;
@@ -47,6 +55,7 @@
 }
 .select-field label {
     margin-right: 10px;
+    color: #000;
 }
 .select-field select {
     padding: 3px;
