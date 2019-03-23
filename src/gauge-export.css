@@ -1,41 +1,39 @@
 .gauge-export {
+    padding: 20px;
 }
 
-.gauge-export button {
+.instructions {
+
+}
+.instructions i {
+    display: inline-block;
+    padding: 5px 7px;
+    background-color: #81C784;
+    color: #fff;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.instructions a {
+    margin-top: 10px;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid;
+}
+
+.cta {
     padding: 10px 20px;
     font-size: .7rem;
     font-weight: 300;
     text-transform: uppercase;
     letter-spacing: 2px;
     cursor: pointer;
-    background-color: transparent;
     border: 1px solid #7C94EC;
-}
-
-.gauge-export button:first-child {
-    border-right: none;
+    background-color: #1124A7;
+    border-radius: 20px;
+    color: #ffffff;
 }
 
 .gauge-export button.selected {
     background-color: #7C94EC;
     color: #fff;
-}
-
-.gauge-export .cta {
-    margin-top: 30px;
-    background-color: #1124A7;
-    border-radius: 3px;
-    color: #ffffff;
-    border: 0;
-}
-
-.gauge-export .use-react {
-    margin-top: 20px;
-    color: #ffffff;
-}
-
-.use-react a {
-    color: #3d3d3d;
-    text-decoration: none;
-    border-bottom: 1px dashed;
 }
