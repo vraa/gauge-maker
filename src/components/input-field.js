@@ -24,8 +24,4 @@ class InputField extends Component {
     }
 }
 
-InputField.PropTypes = {
-    type: 'text'
-};
-
 export default InputField;

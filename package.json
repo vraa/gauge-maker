@@ -4,18 +4,24 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^15.6.1",
-    "react-color": "^2.13.1",
-    "react-dom": "^15.6.1",
-    "react-radial-gauge": "^0.1.0"
+    "react": "*",
+    "react-color": "*",
+    "react-dom": "*",
+    "react-radial-gauge": "^0.1.1"
   },
   "devDependencies": {
-    "react-scripts": "1.0.10"
+    "react-scripts": "^2.1.8"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
