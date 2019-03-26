@@ -88,7 +88,7 @@ class App extends Component {
           <div className={'showcase'}>
             <header>
               <h1>Gauge Generator</h1>
-              <p>Built by <a href={"https://veera.dev"}>Veera</a></p>
+              <p>Built by <a href={"https://veera.dev"}>Veera</a> / <a href={"https://github.com/vraa/gauge-generator"}>Source</a></p>
             </header>
             <div className="gauge-display">
               <Gauge

@@ -1,7 +1,7 @@
-import React, {Component} from "react";
+import React, {PureComponent} from "react";
 import "./input-field.css";
 
-class InputField extends Component {
+class InputField extends PureComponent {
     render() {
         let props = this.props;
         let inputValElm = null;

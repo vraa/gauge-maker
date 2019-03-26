@@ -1,8 +1,8 @@
-import React, {Component} from "react";
+import React, {PureComponent} from "react";
 import {SketchPicker} from "react-color";
 import "./input-color.css";
 
-class InputColor extends Component {
+class InputColor extends PureComponent {
 
     state = {
         pickerOpen: false
