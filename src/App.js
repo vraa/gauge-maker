@@ -6,7 +6,6 @@ import GaugeForm from "./gauge-form";
 import { themes } from "./themes";
 
 class App extends Component {
-
   state = {
     ...{
       size: 200,
@@ -29,55 +28,60 @@ class App extends Component {
       needleBaseSize: 5,
 
       needleWidth: 2,
-      needleSharp: false,
+      needleSharp: false
     },
     ...themes.watermelon
   };
 
   componentDidMount() {
-    const s = document.createElement('script');
+    const s = document.createElement("script");
     s.id = "_carbonads_js";
-    s.type = 'text/javascript';
+    s.type = "text/javascript";
     s.async = true;
-    s.src = "//cdn.carbonads.com/carbon.js?serve=CK7DLK7W&placement=veerasundarcom";
-    this.carbonRef.appendChild(s);
+    s.src =
+      "//cdn.carbonads.com/carbon.js?serve=CK7DLK7W&placement=veerasundarcom";
+    // this.carbonRef.appendChild(s);
   }
 
-  handleGaugeChange = (st) => {
-    this.setState(Object.assign(
-      {},
-      this.state,
-      st
-    ));
+  handleGaugeChange = st => {
+    this.setState(Object.assign({}, this.state, st));
   };
 
-  applyTheme = (theme) => {
+  applyTheme = theme => {
     const oldTheme = this.state;
     this.setState({ ...oldTheme, ...theme });
   };
 
   handleGenerateClick = () => {
-    const svgString = new XMLSerializer().serializeToString(document.querySelector(".gauge"));
+    const svgString = new XMLSerializer().serializeToString(
+      document.querySelector(".gauge")
+    );
     const uriPayload = svgString.replace(/"/g, "'");
     this.setState({
-      svg: 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(uriPayload)
+      svg: "data:image/svg+xml;charset=utf-8," + encodeURIComponent(uriPayload)
     });
   };
 
   handleDone = () => {
-    this.setState({svg: null});
+    this.setState({ svg: null });
   };
 
   renderSVGDownload = () => {
     const { svg } = this.state;
-    return <div className={'download'}>
-      <div>
-        <i>✔</i>
-        <p>Generated. Now, right click and select either 'Save As' or 'Open New Tab'.</p>
-        <a href={svg}>Right Click and Save Link As</a><br/>
-        <button onClick={this.handleDone}>Done</button>
+    return (
+      <div className={"download"}>
+        <div>
+          <i>✔</i>
+          <p>
+            Generated. Now, right click and select either 'Save As' or 'Open New
+            Tab'.
+          </p>
+          <a href={svg}>Right Click and Save Link As</a>
+          <br />
+          <button onClick={this.handleDone}>Done</button>
+        </div>
       </div>
-    </div>
+    );
   };
 
   render() {
@@ -85,23 +89,26 @@ class App extends Component {
     return (
       <main className="main">
         <div className="app">
-          <div className={'showcase'}>
+          <div className={"showcase"}>
             <header>
               <h1>Gauge Generator</h1>
-              <p>Built by <a href={"https://veera.dev"}>Veera</a> / <a href={"https://github.com/vraa/gauge-generator"}>Source</a></p>
+              <p>
+                Built by <a href={"https://veera.dev"}>Veera</a> /{" "}
+                <a href={"https://github.com/vraa/gauge-generator"}>Source</a>
+              </p>
             </header>
             <div className="gauge-display">
-              <Gauge
-                className="gauge"
-                {...this.state}
-              />
+              <Gauge className="gauge" {...this.state} />
             </div>
             <footer>
               <button onClick={this.handleGenerateClick}>Generate SVG</button>
             </footer>
-            <div className={'carbon'} ref={el => {this.carbonRef = el}}>
-
-            </div>
+            <div
+              className={"carbon"}
+              ref={el => {
+                this.carbonRef = el;
+              }}
+            />
           </div>
           <section className="content">
             <GaugeForm
@@ -110,9 +117,7 @@ class App extends Component {
               {...this.state}
             />
           </section>
-          {
-            svg ? this.renderSVGDownload() : null
-          }
+          {svg ? this.renderSVGDownload() : null}
         </div>
       </main>
     );

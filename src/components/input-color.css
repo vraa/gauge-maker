@@ -1,43 +1,41 @@
 .input-color {
-
 }
 
 .input-color button {
-    width: 25px;
-    height: 25px;
-    margin-top: 10px;
-    padding: 0;
-    border: 1px solid #5d5d5d;
-    border-radius: 50%;
-    cursor: pointer;
+  width: 25px;
+  height: 25px;
+  margin-top: 10px;
+  padding: 0;
+  border: 1px solid #5d5d5d;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 .input-color .sketch-picker {
-    margin-top: 10px;
-    box-shadow: none;
-    z-index: 100;
+  margin-top: 10px;
+  box-shadow: none;
+  z-index: 100;
 }
 
 .color-picker {
-    position: relative;
+  position: relative;
 }
 
 .color-picker.open {
-    position: absolute;
-    display: block;
-
+  position: absolute;
+  display: block;
 }
 
 .color-picker.close {
-    display: none;
+  display: none;
 }
 
 .input-color .close-picker {
-    display: inline-block;
-    border: none;
-    background-color: transparent;
-    font-size: 1rem;
-    width: auto;
-    height: auto;
-    margin-left: 10px;
+  display: inline-block;
+  border: none;
+  background-color: transparent;
+  font-size: 1rem;
+  width: auto;
+  height: auto;
+  margin-left: 10px;
 }

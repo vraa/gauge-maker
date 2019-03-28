@@ -12,7 +12,7 @@ const VARIANTS = {
     needleSharp: true,
     progressFontSize: "25",
     needleBaseSize: 10,
-    needleWidth: 10,
+    needleWidth: 10
   },
   2: {
     size: 200,
@@ -21,7 +21,7 @@ const VARIANTS = {
     needleSharp: true,
     progressFontSize: "35",
     needleBaseSize: 5,
-    needleWidth: 5,
+    needleWidth: 5
   },
   3: {
     size: 250,
@@ -30,18 +30,17 @@ const VARIANTS = {
     needleSharp: true,
     progressFontSize: "35",
     needleBaseSize: 15,
-    needleWidth: 15,
+    needleWidth: 15
   }
 };
 
 class GaugeForm extends PureComponent {
-
   state = {
     size: 120,
     currentValue: 60
   };
 
-  handleChange = (e) => {
+  handleChange = e => {
     let st = {};
     st[e.target.id] = e.target.value;
     this.props.onChange(st);
@@ -53,13 +52,13 @@ class GaugeForm extends PureComponent {
     this.props.onChange(st);
   };
 
-  handleCheckChange = (e) => {
+  handleCheckChange = e => {
     let st = {};
     st[e.target.id] = e.target.checked;
     this.props.onChange(st);
   };
 
-  handleVariantChange = (e) => {
+  handleVariantChange = e => {
     e.preventDefault();
     const variant = e.target.value;
     this.props.onChange(VARIANTS[variant]);
@@ -69,15 +68,21 @@ class GaugeForm extends PureComponent {
     let props = this.props;
     return (
       <form className="gauge-form">
-        <div className={'theme-and-variant'}>
-          <Themes onChange={this.props.onThemeChange}/>
-          <div className={'variants'}>
-            <button value={1} onClick={this.handleVariantChange}>Variant 1</button>
-            <button value={2} onClick={this.handleVariantChange}>Variant 2</button>
-            <button value={3} onClick={this.handleVariantChange}>Variant 3</button>
+        <div className={"theme-and-variant"}>
+          <Themes onChange={this.props.onThemeChange} />
+          <div className={"variants"}>
+            <button value={1} onClick={this.handleVariantChange}>
+              Variant 1
+            </button>
+            <button value={2} onClick={this.handleVariantChange}>
+              Variant 2
+            </button>
+            <button value={3} onClick={this.handleVariantChange}>
+              Variant 3
+            </button>
           </div>
         </div>
-        <div className={'field-group colors'}>
+        <div className={"field-group colors"}>
           <InputColor
             id="dialColor"
             label="Dial"
@@ -109,8 +114,8 @@ class GaugeForm extends PureComponent {
             onChange={this.handleColorChange}
           />
         </div>
-        <div className={'sliders row-1'}>
-          <div className={'field-group values'}>
+        <div className={"sliders row-1"}>
+          <div className={"field-group values"}>
             <h3>Font</h3>
             <InputField
               id="progressFontSize"
@@ -121,7 +126,7 @@ class GaugeForm extends PureComponent {
               min="20"
               max="80"
             />
-            <div className={'select-field'}>
+            <div className={"select-field"}>
               <label>Type</label>
               <select
                 id="progressFont"
@@ -156,7 +161,7 @@ class GaugeForm extends PureComponent {
             />
           </div>
         </div>
-        <div className={'sliders row-2'}>
+        <div className={"sliders row-2"}>
           <div className="field-group dial">
             <h3>Dial</h3>
             <InputField
@@ -229,7 +234,7 @@ class GaugeForm extends PureComponent {
           </div>
         </div>
       </form>
-    )
+    );
   }
 }
 

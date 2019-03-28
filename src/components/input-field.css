@@ -2,57 +2,54 @@
 }
 
 .input-field label {
-    display: block;
-    font-size: .9rem;
-    margin-right: 10px;
-    color: #3d3d3d;
+  display: block;
+  font-size: 0.9rem;
+  margin-right: 10px;
+  color: #3d3d3d;
 }
 
 .input-field input {
-    margin-top: 10px;
-    cursor: pointer;
+  margin-top: 10px;
+  cursor: pointer;
 }
 
 .input-field .input-value {
-    font-size: .7rem;
-    color: #7C94EC;
-    margin-top: 5px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+  font-size: 0.7rem;
+  color: #7c94ec;
+  margin-top: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-input[type=range] {
-    -webkit-appearance: none;
-    width: 90%;
-    border-radius: 5px;
-    height: 3px;
-    border: 1px solid #7C94EC;
-    background-color: #7C94EC;
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 90%;
+  border-radius: 5px;
+  height: 3px;
+  border: 1px solid #7c94ec;
+  background-color: #7c94ec;
 }
 
-input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    border: none;
-    height: 16px;
-    width: 16px;
-    border-radius: 50%;
-    background: #1124A7;
-    margin-top: -2px;
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #1124a7;
+  margin-top: -2px;
 }
 
-input[type=range]::-moz-range-thumb {
-    -webkit-appearance: none;
-    border: none;
-    height: 16px;
-    width: 16px;
-    border-radius: 50%;
-    background: #1124A7;
-    margin-top: -2px;
+input[type="range"]::-moz-range-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #1124a7;
+  margin-top: -2px;
 }
 
-input[type=range]::-moz-range-track {
-    background-color: transparent;
+input[type="range"]::-moz-range-track {
+  background-color: transparent;
 }
-
-
-
