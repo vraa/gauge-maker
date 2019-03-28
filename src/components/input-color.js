@@ -1,66 +1,50 @@
-import React, {PureComponent} from "react";
-import {SketchPicker} from "react-color";
+import React, { memo, useState } from "react";
+import { SketchPicker } from "react-color";
 import "./input-color.css";
 
-class InputColor extends PureComponent {
+const InputColor = memo(({ id, label, value, onChange }) => {
+  const [pickerOpen, setPickerOpen] = useState(false);
 
-    state = {
-        pickerOpen: false
-    };
+  const handlePickerButtonClick = e => {
+    e.preventDefault();
+    setPickerOpen(!pickerOpen);
+  };
 
-    handleChange = (color) => {
-        this.props.onChange(this.props.id, color);
-    };
+  const handleClosePickerClick = e => {
+    e.preventDefault();
+    setPickerOpen(false);
+  };
 
-    togglePicker = (e) => {
-        e.preventDefault();
-        this.setState({
-            pickerOpen: !this.state.pickerOpen
-        })
-    };
+  const handlePickerChange = value => {
+    onChange(id, value);
+  };
 
-    closePicker = (e) => {
-        e.preventDefault();
-        this.setState({
-            pickerOpen: false
-        });
-    };
-
-    render() {
-        let props = this.props;
-        let pickerClass = this.state.pickerOpen ? 'open' : 'close';
-        let closePickerElm = null;
-
-        if (this.state.pickerOpen) {
-            closePickerElm = (
-                <button
-                    className="close-picker"
-                    onClick={this.closePicker}
-                >✕</button>
-            );
-        }
-        return (
-            <div className="input-field input-color">
-                <label>{props.label}</label>
-                <button
-                    style={{
-                        backgroundColor: `${props.value}`
-                    }}
-                    onClick={this.togglePicker}
-                />
-                {closePickerElm}
-                <div className={`color-picker ${pickerClass}`}>
-                    <SketchPicker
-                        color={props.value}
-                        onChange={this.handleChange}
-                        pointer={null}
-                    />
-                </div>
-                <p className="input-value">{props.value}</p>
-            </div>
-        )
-
-    }
-}
+  return (
+    <div className={"input-field input-color"}>
+      <label>{label}</label>
+      <button
+        style={{
+          backgroundColor: `${value}`
+        }}
+        onClick={handlePickerButtonClick}
+      />
+      {pickerOpen ? (
+        <React.Fragment>
+          <button className="close-picker" onClick={handleClosePickerClick}>
+            ✕
+          </button>
+          <div className={`color-picker open`}>
+            <SketchPicker
+              color={value}
+              onChange={handlePickerChange}
+              pointer={null}
+            />
+          </div>
+        </React.Fragment>
+      ) : null}
+      <p className="input-value">{value}</p>
+    </div>
+  );
+});
 
 export default InputColor;
